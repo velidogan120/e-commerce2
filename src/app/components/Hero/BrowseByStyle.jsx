@@ -1,7 +1,7 @@
 import React from "react";
 import "@/app/styles/components/BrowseByStyle.scss";
 import Image from "next/image";
-import casual from "../../../../public/Style/Casual.png";
+import casual from "../../../../public/Style/casual.png";
 import formal from "../../../../public/Style/Formal.png";
 import party from "../../../../public/Style/Party.png";
 import gym from "../../../../public/Style/Gym.png";
