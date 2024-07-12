@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const loadState = () => {
   try {
-    const serializedState = localStorage.getItem("cartItems");
+    const serializedState = window.localStorage.getItem("cartItems");
     if (serializedState === null) {
       return { items: [] };
     }
@@ -15,7 +15,7 @@ const loadState = () => {
 const saveState = (state) => {
   try {
     const serializedState = JSON.stringify(state);
-    localStorage.setItem("cartItems", serializedState);
+    window.localStorage.setItem("cartItems", serializedState);
   } catch (err) {}
 };
 

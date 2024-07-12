@@ -75,7 +75,7 @@ const renderStars = (stars) => {
 
 const DetailPage = async ({ params }) => {
   const { t } = await useTranslation(params.lng);
-  const res = await fetch("http://localhost:3001/Products", {
+  const res = await fetch("https://vercel-json-deneme-main.vercel.app/Products", {
     cache: "no-cache",
   });
   const products = await res.json();

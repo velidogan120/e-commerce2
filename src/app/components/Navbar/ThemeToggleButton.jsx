@@ -7,9 +7,11 @@ import { useEffect } from "react";
 const ThemeToggleButton = () => {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme.theme);
-
+  let storedTheme;
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
+    if (typeof window !== "undefined") {
+      storedTheme = window.localStorage.getItem("theme");
+    }
     if (storedTheme) {
       dispatch(setTheme(storedTheme));
       document.documentElement.setAttribute("data-theme", storedTheme);
@@ -19,7 +21,8 @@ const ThemeToggleButton = () => {
   const handleToggle = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     dispatch(toggleTheme());
-    localStorage.setItem("theme", newTheme);
+    
+    window.localStorage.setItem("theme", newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
   };
 

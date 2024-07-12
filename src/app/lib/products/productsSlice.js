@@ -4,7 +4,7 @@ import axios from "axios";
 export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
-    const response = await axios.get("http://localhost:3001/Products");
+    const response = await axios.get("https://vercel-json-deneme-main.vercel.app/Products");
     const products = response.data.flat(); // Flatten the nested array
     return products;
   }
